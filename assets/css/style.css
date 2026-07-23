@@ -1,0 +1,1420 @@
+@charset "UTF-8";
+
+:root {
+  --sari-lp-pink: #ff2d91;
+  --sari-lp-hot: #db005d;
+  --sari-lp-deep: #65002e;
+  --sari-lp-black: #090006;
+  --sari-lp-white: #fff8fc;
+  --sari-lp-gold: #ffd27a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body:has(.sari-lp-root) {
+  margin: 0;
+  background: #090006;
+}
+
+.sari-lp-wp-body {
+  margin: 0;
+  background: #090006;
+}
+
+.sari-lp-root,
+.sari-lp-root *,
+.sari-lp-root *::before,
+.sari-lp-root *::after {
+  box-sizing: border-box;
+}
+
+.sari-lp-root {
+  position: relative;
+  width: min(100%, 750px);
+  min-width: 0;
+  margin: 0 auto;
+  overflow: clip;
+  color: var(--sari-lp-white);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 34, 137, .13), transparent 24%),
+    #090006;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.7;
+  isolation: isolate;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sari-lp-root img {
+  display: block;
+  max-width: 100%;
+}
+
+.sari-lp-root a {
+  color: inherit;
+}
+
+.sari-lp-root h1,
+.sari-lp-root h2,
+.sari-lp-root h3,
+.sari-lp-root p,
+.sari-lp-root ul {
+  margin-top: 0;
+}
+
+.sari-lp-skip {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 100;
+  padding: 8px 12px;
+  border-radius: 0 0 8px 8px;
+  background: #fff;
+  color: #111 !important;
+  font-weight: 700;
+}
+
+.sari-lp-skip:focus {
+  top: 0;
+}
+
+.sari-lp-hero {
+  position: relative;
+  min-height: 100svh;
+  padding: clamp(24px, 6vw, 54px) clamp(16px, 4.8vw, 38px) 42px;
+  overflow: hidden;
+  background-color: #7f003d;
+  background-image:
+    radial-gradient(ellipse 35px 22px at 12% 8%, rgba(5, 0, 4, .9) 0 42%, transparent 46%),
+    radial-gradient(ellipse 24px 38px at 88% 16%, rgba(12, 0, 7, .94) 0 39%, transparent 44%),
+    radial-gradient(ellipse 34px 21px at 28% 28%, rgba(8, 0, 5, .86) 0 40%, transparent 45%),
+    radial-gradient(ellipse 22px 35px at 70% 38%, rgba(5, 0, 4, .9) 0 39%, transparent 44%),
+    radial-gradient(ellipse 36px 23px at 8% 54%, rgba(7, 0, 4, .88) 0 42%, transparent 47%),
+    radial-gradient(ellipse 25px 38px at 91% 64%, rgba(5, 0, 4, .9) 0 40%, transparent 45%),
+    radial-gradient(ellipse 36px 23px at 24% 78%, rgba(7, 0, 4, .9) 0 40%, transparent 45%),
+    radial-gradient(ellipse 25px 37px at 71% 88%, rgba(6, 0, 4, .94) 0 41%, transparent 46%),
+    radial-gradient(circle at 50% 42%, rgba(255, 51, 145, .55), transparent 56%),
+    linear-gradient(160deg, #c00059, #62002d 58%, #18000f);
+  background-size: 190px 170px, 190px 170px, 190px 170px, 190px 170px, 190px 170px, 190px 170px, 190px 170px, 190px 170px, auto, auto;
+}
+
+.sari-lp-hero::before,
+.sari-lp-products::before,
+.sari-lp-scenes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.85) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,165,211,.65) 0 1px, transparent 1.5px);
+  background-position: 0 0, 17px 21px;
+  background-size: 38px 38px, 52px 52px;
+  opacity: .28;
+  mix-blend-mode: screen;
+}
+
+.sari-lp-hero::after {
+  content: "";
+  position: absolute;
+  right: -95px;
+  bottom: 20%;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(255, 211, 232, .18);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 18px rgba(255,255,255,.02),
+    0 0 80px rgba(255, 33, 139, .34);
+}
+
+.sari-lp-glitter {
+  position: absolute;
+  inset: 0;
+  opacity: .6;
+  background:
+    conic-gradient(from 90deg at 13% 20%, transparent, rgba(255,255,255,.7), transparent 4%),
+    conic-gradient(from 90deg at 86% 31%, transparent, rgba(255,255,255,.8), transparent 3%),
+    conic-gradient(from 90deg at 79% 73%, transparent, rgba(255,219,127,.8), transparent 3%);
+  pointer-events: none;
+}
+
+.sari-lp-spark {
+  position: absolute;
+  z-index: 4;
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 0 0 8px #fff, 0 0 18px #ff4aa3;
+  animation: sari-lp-twinkle 2.8s ease-in-out infinite;
+}
+
+.sari-lp-spark--one { top: 4%; right: 5%; }
+.sari-lp-spark--two { top: 37%; left: 3%; animation-delay: .8s; }
+.sari-lp-spark--three { top: 56%; right: 12%; animation-delay: 1.5s; }
+
+.sari-lp-hero__copy {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.sari-lp-eyebrow {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 6px 22px;
+  border: 1px solid rgba(255,255,255,.55);
+  background: linear-gradient(90deg, rgba(33,0,18,.5), rgba(205,0,92,.88), rgba(33,0,18,.5));
+  box-shadow: 0 0 16px rgba(255, 20, 124, .7);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(16px, 4vw, 28px);
+  letter-spacing: .12em;
+  text-shadow: 0 0 9px #ff78b7;
+}
+
+.sari-lp-hero__title {
+  margin-bottom: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(58px, 17vw, 126px);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -.08em;
+  line-height: .98;
+  color: #fff;
+  -webkit-text-stroke: 2px #ff2f93;
+  paint-order: stroke fill;
+  text-shadow:
+    0 2px 0 #7d002e,
+    0 0 7px #fff,
+    0 0 15px #ff2f93,
+    0 0 34px #d40058;
+}
+
+.sari-lp-hero__tag {
+  margin: 8px auto 12px;
+  color: #ffe4f1;
+  font-size: clamp(12px, 3.4vw, 19px);
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.sari-lp-hero__visual {
+  position: relative;
+  z-index: 2;
+  height: clamp(410px, 117vw, 710px);
+  max-height: 710px;
+  margin: -2px -18px 0;
+}
+
+.sari-lp-hero__portrait {
+  position: absolute;
+  inset: 0 7% 5% 0;
+  overflow: hidden;
+  border: 2px solid rgba(255, 219, 236, .8);
+  border-radius: 48% 48% 18% 18% / 40% 40% 18% 18%;
+  box-shadow:
+    0 0 0 6px rgba(255, 36, 139, .24),
+    0 0 40px rgba(255, 32, 134, .62);
+  clip-path: polygon(0 0, 90% 0, 100% 13%, 95% 100%, 8% 100%, 0 84%);
+  background: #12000b;
+}
+
+.sari-lp-hero__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 47% 37%;
+  filter: saturate(1.12) contrast(1.04);
+}
+
+.sari-lp-hero__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(36,0,20,.88));
+}
+
+.sari-lp-hero__bottle {
+  position: absolute;
+  right: -2%;
+  bottom: 1%;
+  z-index: 3;
+  width: 31%;
+  height: 72%;
+  filter: drop-shadow(0 9px 14px rgba(0,0,0,.75)) drop-shadow(0 0 9px rgba(255, 64, 155, .65));
+  transform: rotate(3deg);
+}
+
+.sari-lp-hero__bottle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 47% center;
+  border-radius: 44% 44% 20% 20% / 14% 14% 6% 6%;
+}
+
+.sari-lp-ribbon {
+  position: absolute;
+  right: 14%;
+  top: 8%;
+  z-index: 4;
+  width: 82px;
+  height: 58px;
+}
+
+.sari-lp-ribbon::before,
+.sari-lp-ribbon::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  width: 46px;
+  height: 39px;
+  border: 1px solid rgba(255,255,255,.7);
+  background: linear-gradient(135deg, #ffafd3, #d80064 58%, #810038);
+  box-shadow: inset 0 0 9px rgba(255,255,255,.6), 0 0 10px #ff2d91;
+}
+
+.sari-lp-ribbon::before {
+  left: 0;
+  border-radius: 80% 18% 70% 30%;
+  transform: rotate(15deg);
+}
+
+.sari-lp-ribbon::after {
+  right: 0;
+  border-radius: 18% 80% 30% 70%;
+  transform: rotate(-15deg);
+}
+
+.sari-lp-ribbon span {
+  position: absolute;
+  top: 12px;
+  left: 32px;
+  z-index: 2;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #ffd7e9;
+  border-radius: 50%;
+  background: #f3107c;
+  box-shadow: 0 0 10px #fff;
+}
+
+.sari-lp-price-badge {
+  position: relative;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  width: min(94%, 600px);
+  margin: -38px auto 18px;
+  padding: 11px 22px 9px;
+  border: 2px solid #ffc9df;
+  border-radius: 56% 44% 52% 48% / 47% 55% 45% 53%;
+  outline: 2px dotted #ffd275;
+  outline-offset: -8px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.14), transparent 24%),
+    linear-gradient(90deg, #21000f, #74002f 48%, #21000f);
+  box-shadow: 0 0 0 4px #8c0040, 0 0 24px rgba(255, 42, 137, .88), inset 0 0 24px rgba(255,79,158,.35);
+  text-align: center;
+}
+
+.sari-lp-price-badge__message {
+  grid-column: 1 / -1;
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: clamp(23px, 6.8vw, 43px);
+  font-style: normal;
+  letter-spacing: .02em;
+  line-height: 1.18;
+  white-space: nowrap;
+  color: #fffdf4;
+  -webkit-text-stroke: 1.5px #ff3b91;
+  paint-order: stroke fill;
+  text-shadow: 0 2px 0 #7a3500, 0 0 8px #fff, 0 0 16px #ffae38;
+}
+
+.sari-lp-price-badge__gift {
+  grid-column: 1 / -1;
+  margin-top: 9px;
+  color: #ffe5a8;
+  font-size: clamp(13px, 3.2vw, 19px);
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.sari-lp-points {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.sari-lp-points li {
+  min-width: 0;
+  padding: 9px 3px 8px;
+  border: 1px solid rgba(255, 218, 234, .72);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(21,0,12,.92), rgba(149,0,64,.88));
+  box-shadow: inset 0 0 10px rgba(255,255,255,.12), 0 3px 8px rgba(0,0,0,.35);
+  font-size: clamp(9px, 2.65vw, 15px);
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.sari-lp-points li span {
+  display: block;
+  margin-bottom: 1px;
+  color: #ffd08e;
+  font-size: 17px;
+  text-shadow: 0 0 7px #ff2d91;
+}
+
+.sari-lp-cta {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(92%, 540px);
+  min-height: 66px;
+  margin: 0 auto;
+  padding: 13px 64px 13px 24px;
+  overflow: hidden;
+  border: 2px solid #ffd3e8;
+  border-radius: 999px;
+  background: linear-gradient(100deg, #ff4ca5, #d1005a 46%, #870037);
+  box-shadow:
+    0 0 0 5px rgba(255, 42, 141, .19),
+    0 0 22px rgba(255, 44, 145, .76),
+    inset 0 1px 0 rgba(255,255,255,.65);
+  color: #fff;
+  font-size: clamp(19px, 5vw, 27px);
+  font-weight: 900;
+  letter-spacing: .06em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(75,0,29,.9);
+  transition: transform .25s ease, filter .25s ease;
+  animation: sari-lp-cta-glow 3s ease-in-out infinite;
+}
+
+.sari-lp-cta::before {
+  content: "";
+  position: absolute;
+  top: -70%;
+  left: -25%;
+  width: 20%;
+  height: 240%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent);
+  transform: rotate(20deg);
+  animation: sari-lp-shine 4.6s ease-in-out infinite;
+}
+
+.sari-lp-cta span {
+  position: relative;
+  z-index: 2;
+}
+
+.sari-lp-cta b {
+  position: absolute;
+  right: 20px;
+  display: grid;
+  width: 37px;
+  height: 37px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.sari-lp-cta:hover,
+.sari-lp-cta:focus-visible {
+  transform: translateY(-3px) scale(1.015);
+  filter: brightness(1.13);
+}
+
+.sari-lp-cta:focus-visible,
+.sari-lp-fixed-cta:focus-visible,
+.sari-lp-footer a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.sari-lp-section {
+  position: relative;
+  padding: clamp(65px, 14vw, 112px) clamp(18px, 5.5vw, 46px);
+  overflow: hidden;
+}
+
+.sari-lp-section__heading {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.sari-lp-section__kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: #ff94c2;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .26em;
+}
+
+.sari-lp-section__heading h2 {
+  margin-bottom: 21px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(35px, 10vw, 67px);
+  letter-spacing: -.03em;
+  line-height: 1.19;
+  color: #fff;
+  -webkit-text-stroke: 1px #f42888;
+  paint-order: stroke fill;
+  text-shadow: 0 0 7px #fff, 0 0 16px #ff258b, 0 0 28px rgba(255, 37, 139, .7);
+}
+
+.sari-lp-section__heading h2 small {
+  display: block;
+  margin-bottom: 7px;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: .47em;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.sari-lp-heading-gem {
+  position: absolute;
+  right: 6%;
+  bottom: -12px;
+  color: #ff6ead;
+  font-size: 35px;
+  text-shadow: 0 0 6px #fff, 0 0 15px #ff2d91;
+  transform: rotate(17deg);
+}
+
+.sari-lp-section__lead {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto 34px;
+  color: #ffeaf4;
+  font-size: clamp(14px, 3.65vw, 20px);
+  font-weight: 600;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.sari-lp-products {
+  background:
+    linear-gradient(rgba(10,0,7,.72), rgba(18,0,12,.95)),
+    radial-gradient(circle at 20% 35%, #930043, transparent 34%),
+    radial-gradient(circle at 82% 70%, #5e0031, transparent 35%),
+    #090006;
+}
+
+.sari-lp-products::after {
+  content: "";
+  position: absolute;
+  left: -15%;
+  top: 25%;
+  width: 130%;
+  height: 220px;
+  border-block: 1px solid rgba(255, 95, 169, .35);
+  background: linear-gradient(90deg, transparent, rgba(255, 42, 139, .12), transparent);
+  transform: rotate(-7deg);
+}
+
+.sari-lp-bottle-stage {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: clamp(400px, 103vw, 690px);
+  margin: 5px auto 28px;
+  perspective: 900px;
+}
+
+.sari-lp-bottle-card {
+  position: absolute;
+  bottom: 0;
+  width: 39%;
+  height: 93%;
+  padding: 10px 10px 34px;
+  border: 1px solid rgba(255,255,255,.44);
+  border-radius: 20px 20px 44% 44% / 20px 20px 8% 8%;
+  background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(144,0,63,.18) 42%, rgba(0,0,0,.42));
+  box-shadow: inset 0 0 18px rgba(255,255,255,.18), 0 14px 27px rgba(0,0,0,.55), 0 0 16px rgba(255, 42, 139, .28);
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+  backdrop-filter: blur(3px);
+}
+
+.sari-lp-bottle-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px 14px 38% 38% / 14px 14px 7% 7%;
+}
+
+.sari-lp-bottle-card span {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  left: 0;
+  color: #ffe4ef;
+  font-family: Georgia, serif;
+  font-size: clamp(9px, 2.6vw, 14px);
+  font-style: italic;
+  letter-spacing: .05em;
+  text-align: center;
+}
+
+.sari-lp-bottle-card--one {
+  left: 8%;
+  height: 82%;
+  transform: rotate(-9deg) translateZ(-20px);
+}
+
+.sari-lp-bottle-card--two {
+  z-index: 2;
+  left: 30.5%;
+  transform: translateY(-11px);
+}
+
+.sari-lp-bottle-card--three {
+  right: 8%;
+  height: 83%;
+  transform: rotate(9deg) translateZ(-20px);
+}
+
+.sari-lp-bottle-stage:hover .sari-lp-bottle-card--one {
+  transform: rotate(-11deg) translate(-7px, -12px);
+}
+
+.sari-lp-bottle-stage:hover .sari-lp-bottle-card--two {
+  transform: translateY(-25px) scale(1.025);
+}
+
+.sari-lp-bottle-stage:hover .sari-lp-bottle-card--three {
+  transform: rotate(11deg) translate(7px, -12px);
+}
+
+.sari-lp-keyholder {
+  background:
+    radial-gradient(circle at 50% 22%, rgba(255,71,155,.3), transparent 32%),
+    linear-gradient(155deg, #19000f, #3e001f 48%, #0a0007);
+}
+
+.sari-lp-keyholder::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 2px dotted rgba(255, 214, 233, .65);
+  border-radius: 26px;
+  box-shadow: inset 0 0 18px rgba(255,43,143,.35), 0 0 12px rgba(255,43,143,.28);
+  pointer-events: none;
+}
+
+.sari-lp-section__heading .sari-lp-keyholder__title {
+  font-size: clamp(20px, 6vw, 42px);
+  letter-spacing: -.055em;
+  white-space: nowrap;
+}
+
+.sari-lp-section__heading .sari-lp-keyholder__title small {
+  letter-spacing: .08em;
+  white-space: normal;
+}
+
+.sari-lp-keyholder__layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  align-items: center;
+  gap: 18px;
+  max-width: 630px;
+  margin: 28px auto 0;
+}
+
+.sari-lp-acrylic {
+  position: relative;
+  width: min(100%, 280px);
+  margin: 20px auto 0;
+}
+
+.sari-lp-acrylic__chain {
+  display: none;
+}
+
+.sari-lp-acrylic__body {
+  position: relative;
+  aspect-ratio: 1224 / 1285;
+  padding: 7px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.78);
+  border-radius: 17px;
+  background: rgba(255,255,255,.14);
+  box-shadow:
+    inset 0 0 23px rgba(255,255,255,.65),
+    0 0 0 5px rgba(255, 128, 184, .18),
+    0 18px 35px rgba(0,0,0,.55);
+  transform: rotate(-4deg);
+  backdrop-filter: blur(5px);
+}
+
+.sari-lp-acrylic__body img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.1) contrast(1.04);
+}
+
+.sari-lp-acrylic__body::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  background: rgba(65,0,34,.55);
+  transform: translateX(-50%);
+}
+
+.sari-lp-acrylic__shine {
+  position: absolute;
+  inset: -35% auto -35% -18%;
+  width: 32%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: rotate(14deg);
+  animation: sari-lp-acrylic-shine 4.5s ease-in-out infinite;
+}
+
+.sari-lp-keyholder__copy {
+  color: #ffeaf4;
+  font-size: clamp(14px, 3.5vw, 19px);
+}
+
+.sari-lp-keyholder__copy p {
+  margin-bottom: 13px;
+}
+
+.sari-lp-keyholder__copy strong {
+  display: block;
+  color: #fff;
+  font-family: "Yu Mincho", serif;
+  font-size: clamp(19px, 5vw, 29px);
+  line-height: 1.5;
+  text-shadow: 0 0 9px #ff2c91;
+}
+
+.sari-lp-gift-chip {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 6px 16px;
+  border: 1px solid #ffcae2;
+  border-radius: 999px;
+  background: #d60062;
+  box-shadow: 0 0 13px rgba(255,47,146,.58);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.sari-lp-scenes {
+  background-color: #85003d;
+  background-image:
+    linear-gradient(rgba(16,0,10,.26), rgba(25,0,15,.6)),
+    radial-gradient(ellipse 32px 20px at 10% 10%, #090005 0 40%, transparent 45%),
+    radial-gradient(ellipse 22px 34px at 86% 28%, #100008 0 39%, transparent 45%),
+    radial-gradient(ellipse 33px 20px at 22% 72%, #100008 0 40%, transparent 45%),
+    radial-gradient(ellipse 23px 35px at 78% 88%, #080004 0 40%, transparent 46%);
+  background-size: auto, 180px 165px, 180px 165px, 180px 165px, 180px 165px;
+}
+
+.sari-lp-scenes__catch {
+  position: relative;
+  z-index: 2;
+  margin: -3px auto 26px;
+  color: #fff;
+  font-family: "Yu Mincho", serif;
+  font-size: clamp(20px, 5.4vw, 32px);
+  text-align: center;
+}
+
+.sari-lp-scenes__catch em {
+  color: #ffd28d;
+  font-style: normal;
+  font-weight: 800;
+  text-shadow: 0 0 8px #ff6cab;
+}
+
+.sari-lp-scene-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 590px;
+  margin: 0 auto;
+}
+
+.sari-lp-scene-card {
+  position: relative;
+  display: grid;
+  min-height: 118px;
+  place-content: center;
+  padding: 18px 7px;
+  overflow: hidden;
+  border: 1px solid #ffb8d7;
+  border-radius: 50% 50% 20px 20px / 25% 25% 20px 20px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.24), rgba(226,0,97,.67) 50%, rgba(48,0,27,.91)),
+    #a00049;
+  box-shadow: inset 0 0 16px rgba(255,255,255,.2), 0 7px 15px rgba(15,0,9,.48);
+  text-align: center;
+}
+
+.sari-lp-scene-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dotted rgba(255,255,255,.64);
+  border-radius: inherit;
+}
+
+.sari-lp-scene-card > span {
+  position: relative;
+  color: #ffd4e6;
+  font-size: 22px;
+  line-height: 1;
+  text-shadow: 0 0 9px #fff;
+}
+
+.sari-lp-scene-card b {
+  position: relative;
+  font-family: "Yu Mincho", serif;
+  font-size: clamp(19px, 5vw, 27px);
+  letter-spacing: .08em;
+  text-shadow: 0 0 8px #ff2d91;
+}
+
+.sari-lp-scene-card small {
+  position: relative;
+  color: #ffc4de;
+  font-size: 8px;
+  letter-spacing: .17em;
+}
+
+.sari-lp-scenes__finish {
+  position: relative;
+  z-index: 2;
+  margin: 33px auto 0;
+  padding: 17px;
+  border-block: 1px solid rgba(255,255,255,.35);
+  background: rgba(25,0,15,.54);
+  color: #ffe9f3;
+  font-size: clamp(20px, 5.5vw, 31px);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.sari-lp-scenes__finish strong {
+  color: #fff;
+  font-family: "Yu Mincho", serif;
+  font-size: 1.24em;
+  text-shadow: 0 0 8px #fff, 0 0 18px #ff258b;
+}
+
+.sari-lp-offer {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,41,138,.3), transparent 48%),
+    linear-gradient(180deg, #080005, #220012 48%, #080005);
+}
+
+.sari-lp-offer::before,
+.sari-lp-final::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 8% 12%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 26%, #fff 0 1px, transparent 2px),
+    radial-gradient(circle at 15% 68%, #ff9cc9 0 1px, transparent 2px),
+    radial-gradient(circle at 92% 78%, #ffd58b 0 1px, transparent 2px);
+}
+
+.sari-lp-offer__frame {
+  position: relative;
+  z-index: 2;
+  max-width: 610px;
+  margin: 0 auto 31px;
+  padding: 41px 15px 29px;
+  border: 2px solid #ff90bd;
+  border-radius: 44px;
+  outline: 3px dotted #f6cb86;
+  outline-offset: -11px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.12), transparent 27%),
+    linear-gradient(120deg, #290013, #760032 50%, #210010);
+  box-shadow: 0 0 0 5px #4a0023, 0 0 27px rgba(255, 39, 138, .48), inset 0 0 26px rgba(255,255,255,.08);
+  text-align: center;
+}
+
+.sari-lp-offer__crown {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  color: #ffd376;
+  font-size: 50px;
+  line-height: 1;
+  text-shadow: 0 1px 0 #8f4200, 0 0 12px #ffaf2c;
+  transform: translateX(-50%);
+}
+
+.sari-lp-offer__frame h2 {
+  margin-bottom: 14px;
+  color: #fff2f7;
+  font-size: clamp(16px, 4vw, 24px);
+  letter-spacing: .08em;
+  line-height: 1.6;
+}
+
+.sari-lp-offer__frame h2 strong {
+  display: block;
+  font-family: "Yu Mincho", serif;
+  font-size: clamp(47px, 13vw, 80px);
+  font-style: italic;
+  letter-spacing: -.04em;
+  line-height: 1;
+  -webkit-text-stroke: 1px #ff3a92;
+  paint-order: stroke fill;
+  text-shadow: 0 0 8px #fff, 0 0 18px #ff288d;
+}
+
+.sari-lp-offer__availability,
+.sari-lp-final__availability {
+  margin-bottom: 10px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(21px, 6.2vw, 44px);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .02em;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: #fff;
+  -webkit-text-stroke: 1.5px #e9227c;
+  paint-order: stroke fill;
+  text-shadow: 0 2px 0 #9c4f00, 0 0 8px #fff, 0 0 18px #ffba48;
+}
+
+.sari-lp-offer__gift {
+  margin-bottom: 0;
+  color: #ffe5a5;
+  font-size: clamp(15px, 4vw, 24px);
+  font-weight: 900;
+  text-shadow: 0 0 8px #e2006c;
+}
+
+.sari-lp-offer__points {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 610px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.sari-lp-offer__points li {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  min-height: 78px;
+  padding: 10px;
+  border: 1px solid rgba(255,156,198,.62);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(108,0,50,.74), rgba(23,0,14,.92));
+  box-shadow: inset 0 0 11px rgba(255,255,255,.08);
+}
+
+.sari-lp-offer__points b {
+  color: #ff66a6;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.sari-lp-offer__points span {
+  font-size: clamp(12px, 3.2vw, 18px);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.sari-lp-flow {
+  background:
+    linear-gradient(rgba(49,0,26,.9), rgba(8,0,5,.96)),
+    radial-gradient(circle at 50% 0, #b60050, transparent 48%);
+}
+
+.sari-lp-flow__steps {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.sari-lp-step {
+  position: relative;
+  padding: 24px 20px 23px 102px;
+  border: 1px solid #ffa4ca;
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.16), transparent 24%),
+    linear-gradient(120deg, #a5004a, #4a0028);
+  box-shadow: inset 0 0 17px rgba(255,255,255,.12), 0 8px 18px rgba(0,0,0,.36);
+}
+
+.sari-lp-step::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dotted rgba(255,224,237,.46);
+  border-radius: 17px;
+  pointer-events: none;
+}
+
+.sari-lp-step__number {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  display: grid;
+  width: 65px;
+  height: 65px;
+  place-content: center;
+  border: 1px solid #ffd7e8;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(145deg, #ff8cbe, #c40058 65%, #720030);
+  box-shadow: 0 0 14px rgba(255,65,150,.7), inset 0 0 9px rgba(255,255,255,.33);
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: .78;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.sari-lp-step__number small {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+
+.sari-lp-step h3 {
+  position: relative;
+  margin-bottom: 5px;
+  font-family: "Yu Mincho", serif;
+  font-size: clamp(21px, 5.7vw, 31px);
+  line-height: 1.35;
+  text-shadow: 0 0 8px #ff2e91;
+}
+
+.sari-lp-step p {
+  position: relative;
+  margin-bottom: 0;
+  color: #ffe4f0;
+  font-size: clamp(12px, 3.1vw, 17px);
+  line-height: 1.65;
+}
+
+.sari-lp-step-arrow {
+  display: block;
+  height: 26px;
+  color: #ff69aa;
+  font-size: 31px;
+  line-height: 23px;
+  text-align: center;
+  text-shadow: 0 0 8px #ff2d91;
+  transform: rotate(90deg);
+}
+
+.sari-lp-final {
+  position: relative;
+  min-height: 970px;
+  padding: 64px 18px 84px;
+  overflow: hidden;
+  background-color: #7e003a;
+  background-image:
+    radial-gradient(ellipse 35px 22px at 14% 8%, #090005 0 40%, transparent 45%),
+    radial-gradient(ellipse 22px 35px at 84% 24%, #090005 0 40%, transparent 45%),
+    radial-gradient(ellipse 34px 21px at 26% 67%, #090005 0 40%, transparent 45%),
+    radial-gradient(ellipse 23px 35px at 80% 84%, #090005 0 40%, transparent 45%),
+    linear-gradient(170deg, #aa0049, #370020 57%, #090006);
+  background-size: 185px 168px, 185px 168px, 185px 168px, 185px 168px, auto;
+}
+
+.sari-lp-final__portrait {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 590px);
+  height: clamp(340px, 84vw, 570px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 3px solid #ffacd0;
+  border-radius: 49% 49% 28% 28% / 42% 42% 24% 24%;
+  box-shadow:
+    0 0 0 7px rgba(255,42,139,.24),
+    0 0 0 9px rgba(255,226,239,.35),
+    0 0 35px rgba(255,41,139,.73);
+  clip-path: polygon(50% 6%, 57% 0, 69% 0, 81% 5%, 91% 16%, 98% 29%, 100% 45%, 97% 61%, 90% 75%, 78% 87%, 50% 100%, 22% 87%, 10% 75%, 3% 61%, 0 45%, 2% 29%, 9% 16%, 19% 5%, 31% 0, 43% 0);
+}
+
+.sari-lp-final__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 39%;
+}
+
+.sari-lp-final__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 56%, rgba(34,0,18,.88));
+}
+
+.sari-lp-final__content {
+  position: relative;
+  z-index: 3;
+  width: min(96%, 620px);
+  margin: -78px auto 0;
+  padding: 33px 14px 28px;
+  border: 2px solid #ffc6de;
+  border-radius: 34px;
+  background: rgba(25,0,15,.9);
+  box-shadow: 0 0 24px rgba(255,38,139,.65), inset 0 0 23px rgba(255,64,154,.16);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.sari-lp-final__status {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 20px;
+  border-radius: 999px;
+  background: #d90062;
+  box-shadow: 0 0 14px rgba(255,49,146,.8);
+  font-size: clamp(14px, 3.8vw, 21px);
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.sari-lp-final__content h2 {
+  margin-bottom: 10px;
+  font-family: "Yu Mincho", serif;
+  font-size: clamp(49px, 13vw, 78px);
+  font-style: italic;
+  line-height: 1.1;
+  -webkit-text-stroke: 1px #ff3c96;
+  paint-order: stroke fill;
+  text-shadow: 0 0 8px #fff, 0 0 18px #ff2e91;
+}
+
+.sari-lp-final__content h2 small {
+  display: block;
+  margin-bottom: 4px;
+  font-family: "Yu Gothic", sans-serif;
+  font-size: .29em;
+  font-style: normal;
+  letter-spacing: .06em;
+}
+
+.sari-lp-final__message {
+  margin-bottom: 10px;
+  color: #ffdce9;
+  font-family: "Yu Mincho", serif;
+  font-size: clamp(17px, 4.5vw, 26px);
+}
+
+.sari-lp-final__price {
+  margin-bottom: 3px;
+}
+
+.sari-lp-final__gift {
+  margin-bottom: 6px;
+  color: #ffe39e;
+  font-size: clamp(15px, 4vw, 22px);
+  font-weight: 900;
+}
+
+.sari-lp-final__note {
+  margin-bottom: 19px;
+  color: #ffeef5;
+  font-size: clamp(13px, 3.5vw, 18px);
+}
+
+.sari-lp-footer {
+  padding: 30px 18px 36px;
+  border-top: 1px solid #4d0026;
+  background: #060004;
+  color: #cda6b9;
+  font-size: 11px;
+  text-align: center;
+}
+
+.sari-lp-footer a {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: #ff80b7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-decoration: none;
+}
+
+.sari-lp-footer p {
+  margin-bottom: 0;
+}
+
+.sari-lp-fixed-space {
+  height: calc(76px + env(safe-area-inset-bottom, 0px));
+}
+
+.sari-lp-fixed-wrap {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  display: flex;
+  justify-content: center;
+  padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+  pointer-events: none;
+}
+
+.sari-lp-fixed-cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: min(calc(100% - 8px), 726px);
+  min-height: 58px;
+  padding: 8px 14px 8px 19px;
+  overflow: hidden;
+  border: 2px solid #ffc9e0;
+  border-radius: 999px;
+  background: linear-gradient(100deg, #ff52a9, #df0064 45%, #8e0039);
+  box-shadow: 0 0 20px rgba(255,36,139,.78), inset 0 1px 0 rgba(255,255,255,.7);
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(79,0,31,.8);
+  pointer-events: auto;
+}
+
+.sari-lp-fixed-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 28%, rgba(255,255,255,.3) 45%, transparent 60%);
+  transform: translateX(-120%);
+  animation: sari-lp-fixed-shine 4s ease-in-out infinite;
+}
+
+.sari-lp-fixed-cta span {
+  position: relative;
+  padding-right: 13px;
+  border-right: 1px solid rgba(255,255,255,.46);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(11px, 3vw, 18px);
+  white-space: nowrap;
+}
+
+.sari-lp-fixed-cta strong {
+  position: relative;
+  font-size: clamp(17px, 4.6vw, 23px);
+  letter-spacing: .08em;
+  text-align: center;
+}
+
+.sari-lp-fixed-cta b {
+  position: relative;
+  font-size: 29px;
+  line-height: 1;
+}
+
+.sari-lp-has-js .sari-lp-reveal,
+.sari-lp-has-js .sari-lp-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1);
+}
+
+.sari-lp-has-js .sari-lp-reveal.sari-lp-is-visible,
+.sari-lp-has-js .sari-lp-stagger.sari-lp-is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sari-lp-stagger.sari-lp-is-visible > *:nth-child(2) { transition-delay: .1s; }
+.sari-lp-stagger.sari-lp-is-visible > *:nth-child(3) { transition-delay: .2s; }
+.sari-lp-stagger.sari-lp-is-visible > *:nth-child(4) { transition-delay: .3s; }
+.sari-lp-stagger.sari-lp-is-visible > *:nth-child(5) { transition-delay: .4s; }
+.sari-lp-stagger.sari-lp-is-visible > *:nth-child(6) { transition-delay: .5s; }
+
+@keyframes sari-lp-twinkle {
+  0%, 100% { opacity: .28; transform: scale(.72) rotate(0deg); }
+  48% { opacity: 1; transform: scale(1.15) rotate(22deg); }
+}
+
+@keyframes sari-lp-cta-glow {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(255,42,141,.19), 0 0 17px rgba(255,44,145,.58), inset 0 1px 0 rgba(255,255,255,.65); }
+  50% { box-shadow: 0 0 0 7px rgba(255,42,141,.12), 0 0 31px rgba(255,76,165,.95), inset 0 1px 0 rgba(255,255,255,.8); }
+}
+
+@keyframes sari-lp-shine {
+  0%, 55% { left: -25%; }
+  80%, 100% { left: 125%; }
+}
+
+@keyframes sari-lp-acrylic-shine {
+  0%, 45% { left: -28%; }
+  72%, 100% { left: 125%; }
+}
+
+@keyframes sari-lp-fixed-shine {
+  0%, 55% { transform: translateX(-120%); }
+  80%, 100% { transform: translateX(120%); }
+}
+
+@media (min-width: 680px) {
+  .sari-lp-hero {
+    min-height: 1020px;
+  }
+
+  .sari-lp-hero__visual {
+    margin-inline: -6px;
+  }
+
+  .sari-lp-scene-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sari-lp-flow__steps {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .sari-lp-step {
+    padding: 88px 17px 23px;
+    text-align: center;
+  }
+
+  .sari-lp-step__number {
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .sari-lp-step-arrow {
+    position: absolute;
+    z-index: 3;
+    height: auto;
+    transform: none;
+  }
+
+  .sari-lp-step-arrow:nth-of-type(1) {
+    top: 46%;
+    left: 31%;
+  }
+
+  .sari-lp-step-arrow:nth-of-type(2) {
+    top: 46%;
+    right: 31%;
+  }
+
+  .sari-lp-final {
+    min-height: 1080px;
+  }
+}
+
+@media (max-width: 430px) {
+  .sari-lp-hero {
+    padding-inline: 14px;
+  }
+
+  .sari-lp-hero__visual {
+    margin-inline: -11px;
+  }
+
+  .sari-lp-price-badge {
+    margin-top: -31px;
+    padding-inline: 15px;
+  }
+
+  .sari-lp-section {
+    padding-inline: 17px;
+  }
+
+  .sari-lp-keyholder__layout {
+    grid-template-columns: .9fr 1.1fr;
+    gap: 12px;
+  }
+
+  .sari-lp-keyholder__copy {
+    line-height: 1.7;
+  }
+
+  .sari-lp-step {
+    padding-left: 92px;
+  }
+
+  .sari-lp-offer__points li {
+    gap: 6px;
+    padding-inline: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sari-lp-root *,
+  .sari-lp-root *::before,
+  .sari-lp-root *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .sari-lp-has-js .sari-lp-reveal,
+  .sari-lp-has-js .sari-lp-stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}
