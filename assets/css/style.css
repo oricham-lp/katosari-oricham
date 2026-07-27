@@ -2183,6 +2183,9 @@ body:has(.sari-lp-root),
 
 .sari-lp-hero__portrait img {
   object-position: 50% top;
+  box-sizing: border-box;
+  padding-top: clamp(28px, 6vw, 44px);
+  background: linear-gradient(180deg, #111216, #070708);
 }
 
 .sari-lp-hero__bottle {
