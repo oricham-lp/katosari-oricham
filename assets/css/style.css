@@ -2172,3 +2172,22 @@ body:has(.sari-lp-root),
     box-shadow: 0 0 0 6px rgba(183,188,198,.05), 0 0 27px rgba(205,208,214,.34), inset 0 1px 0 rgba(255,255,255,.38);
   }
 }
+
+/* Hero replacement tuning */
+.sari-lp-hero__tag {
+  max-width: 100%;
+  font-size: clamp(10px, 2.8vw, 17px);
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+
+.sari-lp-hero__portrait img {
+  object-position: 50% 31%;
+}
+
+.sari-lp-hero__bottle {
+  right: 0;
+  width: 28%;
+  height: 74%;
+  transform: rotate(1deg);
+}
