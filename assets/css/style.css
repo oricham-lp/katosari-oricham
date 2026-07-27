@@ -2182,7 +2182,7 @@ body:has(.sari-lp-root),
 }
 
 .sari-lp-hero__portrait img {
-  object-position: 50% 31%;
+  object-position: 50% top;
 }
 
 .sari-lp-hero__bottle {
